@@ -2,10 +2,11 @@ package server.HubCore.Models;
 
 import cn.nukkit.event.player.PlayerInteractEvent;
 import cn.nukkit.item.ItemCompass;
+import cn.nukkit.utils.TextFormat;
 
 public class navCompass extends ItemCompass {
     public navCompass() {
-        name = "Navigate";
+        setCustomName(TextFormat.GREEN+ "Navigate");
     }
 
     public static void rightClick(PlayerInteractEvent e) {

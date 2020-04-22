@@ -10,7 +10,7 @@ public abstract class CommandBase extends Command {
 
     public CommandBase(String name, CoreApi api) {
         super(name);
-        this.setPermission("MinecraftCore." + name);
+        this.setPermission("HubCore." + name);
         CorePluginManager.plugin.getLogger().info(TextFormat.GREEN + name + " permission enabled!");
         this.api = api;
     }

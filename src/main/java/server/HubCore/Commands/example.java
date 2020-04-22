@@ -11,7 +11,7 @@ import cn.nukkit.form.window.FormWindowCustom;
 public class example extends CommandBase{
 
     public example(CoreApi api){
-        super("clear", api);
+        super("example", api);
     }
 
     public boolean execute(CommandSender sender, String s, String[] args) {

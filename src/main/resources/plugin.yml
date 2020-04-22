@@ -1,0 +1,10 @@
+name: HubCore
+version: "1.0"
+api: ["1.0.0"]
+author: server
+description: A basic plugin for NukkitX
+main: server.HubCore.CorePluginManager
+
+permissions:
+  CoreApi.up:
+    default: op
