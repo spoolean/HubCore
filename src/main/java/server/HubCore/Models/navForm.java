@@ -10,11 +10,12 @@ import java.util.ArrayList;
 
 public class navForm extends FormWindowSimple {
     public navForm(){
-        super("Navigation","",new ArrayList<ElementButton>(){{
-            add(new ElementButton("Capture The Flag"));
-            add(new ElementButton("Future Game"));
-            add(new ElementButton("Leave Server"));
-        }
+        super("Navigation","",new ArrayList<ElementButton>(){
+            {
+            add(new ElementButton("Capture The Flag", new ElementButtonImageData("path","textures/blocks/tnt_side")));
+            add(new ElementButton("Future Game", new ElementButtonImageData("path","textures/blocks/tnt_side")));
+            add(new ElementButton("Leave Server", new ElementButtonImageData("path","textures/blocks/tnt_side")));
+            }
         });
     }
 

@@ -39,6 +39,7 @@ public class Events implements Listener {
     @EventHandler
     public void onFormResponse(PlayerFormRespondedEvent e) {
         if(e.getWindow() instanceof navForm) {
+
             navForm.handleResponse(e);
         }
     }
