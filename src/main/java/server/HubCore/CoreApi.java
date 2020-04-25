@@ -28,7 +28,7 @@ import cn.nukkit.utils.ConfigSection;
 public class CoreApi {
     private static CoreApi instance = null;
     private CorePluginManager plugin;
-    private Vector3 vector3 = new Vector3();
+    
     public CoreApi(CorePluginManager plugin){
         instance = this;
         this.plugin = plugin;
@@ -37,16 +37,4 @@ public class CoreApi {
     public Server getServer() {
         return plugin.getServer();
     }
-
-    public Position getHighestStandablePositionAt(Position pos) {
-        int x = pos.getFloorX();
-        int z = pos.getFloorZ();
-        for (int y = 255; y >= 0; y--) {
-            if (pos.level.getBlock(this.vector3.setComponents(x,y,z)).isSolid()) {
-                return new Position(x + 0.5, pos.level.getBlock(this.vector3.setComponents(x, y, z)).getBoundingBox().getMaxY(), z + 0.5, pos.level);
-            }
-        }
-        return null;
-    }
-
 }
