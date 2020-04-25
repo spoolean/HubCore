@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="HubCore">
+    <output-path>$USER_HOME$/Documents/IdeaOut</output-path>
+    <root id="archive" name="HubCore.jar">
+      <element id="module-output" name="HubCore" />
+    </root>
+  </artifact>
+</component>

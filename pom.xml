@@ -45,6 +45,14 @@
             <scope>provided</scope>
 
         </dependency>
+
+        <dependency>
+            <groupId>org.itxtech.synapse</groupId>
+            <artifactId>synapse-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>

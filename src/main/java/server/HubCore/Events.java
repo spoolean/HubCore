@@ -2,9 +2,12 @@ package server.HubCore;
 
 import cn.nukkit.Player;
 import cn.nukkit.blockentity.BlockEntityItemFrame;
+import cn.nukkit.entity.Entity;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.block.BlockBreakEvent;
+import cn.nukkit.event.entity.EntityDamageByEntityEvent;
+import cn.nukkit.event.entity.EntityDamageEvent;
 import cn.nukkit.event.player.*;
 import cn.nukkit.form.window.FormWindowCustom;
 import cn.nukkit.form.window.FormWindowSimple;
@@ -25,8 +28,10 @@ public class Events implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        e.getPlayer().getServer().broadcastMessage("Welcome to the server "+e.getPlayer().getName());
-        e.getPlayer().getInventory().setItem(4, new navCompass());
+        Player player = e.getPlayer();
+        player.getServer().broadcastMessage("Welcome to the server "+e.getPlayer().getName());
+        player.sendTitle(TextFormat.RED+"Welcome to the server!");
+        player.getInventory().setItem(4, new navCompass());
     }
 
     @EventHandler
@@ -37,9 +42,15 @@ public class Events implements Listener {
     }
 
     @EventHandler
+    public void onDamage(EntityDamageEvent e) {
+        if (e.getEntity() instanceof npcPlayer) {
+            npcPlayer.handleDamage(e);
+        }
+    }
+
+    @EventHandler
     public void onFormResponse(PlayerFormRespondedEvent e) {
         if(e.getWindow() instanceof navForm) {
-
             navForm.handleResponse(e);
         }
     }
